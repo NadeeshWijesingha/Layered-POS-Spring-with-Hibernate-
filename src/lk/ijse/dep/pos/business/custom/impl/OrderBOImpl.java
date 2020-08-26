@@ -1,8 +1,6 @@
 package lk.ijse.dep.pos.business.custom.impl;
 
 import lk.ijse.dep.pos.business.custom.OrderBO;
-import lk.ijse.dep.pos.dao.DAOFactory;
-import lk.ijse.dep.pos.dao.DAOType;
 import lk.ijse.dep.pos.dao.custom.CustomerDAO;
 import lk.ijse.dep.pos.dao.custom.ItemDAO;
 import lk.ijse.dep.pos.dao.custom.OrderDAO;
