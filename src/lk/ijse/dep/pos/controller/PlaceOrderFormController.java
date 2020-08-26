@@ -1,5 +1,6 @@
 package lk.ijse.dep.pos.controller;
 
+import lk.ijse.dep.pos.AppInitializer;
 import lk.ijse.dep.pos.business.BOFactory;
 import lk.ijse.dep.pos.business.BOType;
 import lk.ijse.dep.pos.business.custom.CustomerBO;
@@ -52,9 +53,9 @@ public class PlaceOrderFormController {
     public TableView<OrderDetailTM> tblOrderDetails;
     private boolean readOnly;
 
-    private final OrderBO orderBO = BOFactory.getInstance().getBO(BOType.ORDER);
-    private final ItemBO itemBO = BOFactory.getInstance().getBO(BOType.ITEM);
-    private final CustomerBO customerBO = BOFactory.getInstance().getBO(BOType.CUSTOMER);
+    private final OrderBO orderBO = AppInitializer.getApplicationContext().getBean(OrderBO.class);
+    private final ItemBO itemBO = AppInitializer.getApplicationContext().getBean(ItemBO.class);
+    private final CustomerBO customerBO = AppInitializer.getApplicationContext().getBean(CustomerBO.class);
 
     public void initialize() {
 

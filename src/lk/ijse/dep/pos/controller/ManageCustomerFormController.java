@@ -1,5 +1,6 @@
 package lk.ijse.dep.pos.controller;
 
+import lk.ijse.dep.pos.AppInitializer;
 import lk.ijse.dep.pos.business.BOFactory;
 import lk.ijse.dep.pos.business.BOType;
 import lk.ijse.dep.pos.business.custom.CustomerBO;
@@ -28,7 +29,8 @@ import java.util.ResourceBundle;
 
 public class ManageCustomerFormController implements Initializable {
 
-    private final CustomerBO customerBO = BOFactory.getInstance().getBO(BOType.CUSTOMER);
+    private final CustomerBO customerBO = AppInitializer.getApplicationContext().getBean(CustomerBO.class);
+
     @FXML
     private Button btnSave;
     @FXML
