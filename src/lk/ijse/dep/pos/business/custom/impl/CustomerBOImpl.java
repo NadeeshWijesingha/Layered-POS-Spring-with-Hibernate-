@@ -9,13 +9,17 @@ import lk.ijse.dep.pos.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import lk.ijse.dep.pos.util.CustomerTM;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class CustomerBOImpl implements CustomerBO {
 
-    private final CustomerDAO customerDAO = DAOFactory.getInstance().getDAO(DAOType.CUSTOMER);
+    @Autowired
+    private CustomerDAO customerDAO;
 
     public List<CustomerTM> getAllCustomers() throws Exception {
 

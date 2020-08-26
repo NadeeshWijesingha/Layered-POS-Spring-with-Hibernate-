@@ -4,7 +4,9 @@ import lk.ijse.dep.pos.dao.custom.QueryDAO;
 import lk.ijse.dep.pos.entity.CustomEntity;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
+import org.springframework.stereotype.Component;
 
+@Component
 public class QueryDAOImpl implements QueryDAO {
 
     private Session session;

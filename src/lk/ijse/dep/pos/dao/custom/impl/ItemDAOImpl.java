@@ -3,9 +3,11 @@ package lk.ijse.dep.pos.dao.custom.impl;
 import lk.ijse.dep.pos.dao.CrudDAOImpl;
 import lk.ijse.dep.pos.dao.custom.ItemDAO;
 import lk.ijse.dep.pos.entity.Item;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ItemDAOImpl extends CrudDAOImpl<Item, String> implements ItemDAO {
 
     public String getLastItemCode() throws Exception {

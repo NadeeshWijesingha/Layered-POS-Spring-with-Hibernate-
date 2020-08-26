@@ -3,9 +3,11 @@ package lk.ijse.dep.pos.dao.custom.impl;
 import lk.ijse.dep.pos.dao.CrudDAOImpl;
 import lk.ijse.dep.pos.dao.custom.OrderDAO;
 import lk.ijse.dep.pos.entity.Order;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class OrderDAOImpl extends CrudDAOImpl<Order, String> implements OrderDAO {
 
     public String getLastOrderId() throws Exception {

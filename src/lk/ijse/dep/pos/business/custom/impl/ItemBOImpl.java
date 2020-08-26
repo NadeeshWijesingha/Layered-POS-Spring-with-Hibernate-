@@ -9,19 +9,18 @@ import lk.ijse.dep.pos.entity.Item;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import lk.ijse.dep.pos.util.ItemTM;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ItemBOImpl implements ItemBO {
 
-
-    private final ItemDAO itemDAO;
-
-    public ItemBOImpl() {
-        this.itemDAO = DAOFactory.getInstance().getDAO(DAOType.ITEM);
-    }
+    @Autowired
+    private ItemDAO itemDAO;
 
     public String getNewItemCode() throws Exception {
         Session session = HibernateUtil.getSessionFactory().openSession();
