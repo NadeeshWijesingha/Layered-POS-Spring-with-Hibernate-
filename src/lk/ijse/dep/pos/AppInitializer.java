@@ -6,12 +6,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
 
 public class AppInitializer extends Application {
 
+    private static AnnotationConfigApplicationContext ctx;
+
+    public static AnnotationConfigApplicationContext getApplicationContext(){
+        return ctx;
+    }
+
     public static void main(String[] args) {
+
+        ctx = new AnnotationConfigApplicationContext();
+        ctx.register(AppConfig.class);
+        ctx.refresh();
+
         launch(args);
         HibernateUtil.getSessionFactory().close();
     }
